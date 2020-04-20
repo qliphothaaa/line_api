@@ -1,0 +1,14 @@
+version: '3.3'
+
+services:
+    backend_api:
+        build: ./
+        container_name: LineOADjango
+        tty: true
+        restart: always
+        working_dir: /line_django
+        ports:
+            - "8000:8000"
+        volumes:
+            - ./line_django:/line_django
+        command: ./run.sh
